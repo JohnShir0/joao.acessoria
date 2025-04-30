@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Vitor • Estratégia & Liberdade Financeira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-navy: #0D1B2A;
+            --coffee-brown: #3E2C24;
+            --sand: #D6C7A1;
+            --olive: #7E8D7A;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--deep-navy);
+            background-color: #f9f9f7;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .bg-deep-navy {
+            background-color: var(--deep-navy);
+        }
+        
+        .text-deep-navy {
+            color: var(--deep-navy);
+        }
+        
+        .bg-coffee-brown {
+            background-color: var(--coffee-brown);
+        }
+        
+        .text-coffee-brown {
+            color: var(--coffee-brown);
+        }
+        
+        .bg-sand {
+            background-color: var(--sand);
+        }
+        
+        .text-sand {
+            color: var(--sand);
+        }
+        
+        .bg-olive {
+            background-color: var(--olive);
+        }
+        
+        .text-olive {
+            color: var(--olive);
+        }
+        
+        .hero-image {
+            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+        }
+        
+        .btn-primary {
+            background-color: var(--coffee-brown);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--deep-navy);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--sand);
+            color: var(--deep-navy);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--olive);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--sand);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- WhatsApp Floating Button -->
+    <a href="httphttps://wa.link/lbnvvf
+    " target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-lg z-50 floating-btn hover:bg-green-600 transition-all">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-deep-navy font-space">João Vitor</span>
+                    <span class="ml-2 text-sm text-olive hidden md:block">• Estratégia & Liberdade Financeira</span>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-deep-navy font-medium">Início</a>
+                    <a href="#about" class="nav-link text-deep-navy font-medium">Sobre</a>
+                    <a href="#solutions" class="nav-link text-deep-navy font-medium">Soluções</a>
+                    <a href="#contact" class="nav-link text-deep-navy font-medium">Contato</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-deep-navy focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <a href="#home" class="block py-2 text-deep-navy">Início</a>
+                <a href="#about" class="block py-2 text-deep-navy">Sobre</a>
+                <a href="#solutions" class="block py-2 text-deep-navy">Soluções</a>
+                <a href="#contact" class="block py-2 text-deep-navy">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image relative">
+        <div class="absolute inset-0 bg-deep-navy bg-opacity-60"></div>
+        <div class="container mx-auto px-6 py-32 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in" style="animation-delay: 0.2s;">
+                    Dinheiro não traz paz. Gestão, sim.
+                </h1>
+                <p class="text-xl text-sand mb-8 fade-in" style="animation-delay: 0.4s;">
+                    Conheça um acompanhamento financeiro que une clareza, estratégia e segurança.
+                </p>
+                <a href="https://wa.link/lbnvvf
+                " class="btn-primary px-8 py-3 rounded-full font-medium inline-block fade-in" style="animation-delay: 0.6s;">
+                    Quero entender meu dinheiro de verdade
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12 fade-in">
+                    <h2 class="text-3xl font-bold text-deep-navy mb-6">
+                        Sou João Vitor, assessor financeiro apaixonado por ajudar pessoas a assumirem o controle da própria liberdade.
+                    </h2>
+                    <div class="h-1 w-20 bg-coffee-brown mb-6"></div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Com uma abordagem personalizada e livre de enrolações, ajudo você a entender, planejar e multiplicar seu dinheiro com inteligência.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Já apoiei diversas pessoas a destravarem sua vida financeira — saindo da estagnação e avançando rumo ao que realmente importa: segurança, autonomia e propósito.
+                    </p>
+                    <a href="https://wa.link/lbnvvf
+                    " class="btn-secondary px-6 py-2 rounded-full font-medium inline-block">
+                        Quer dar o próximo passo?
+                    </a>
+                </div>
+                <div class="md:w-1/2 fade-in" style="animation-delay: 0.3s;">
+                    <div class="bg-sand rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://i.imgur.com/4v0Zhfg.jpeg" alt="João Vitor" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-deep-navy mb-4">Minhas Soluções</h2>
+                <div class="h-1 w-20 bg-coffee-brown mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Ofereço estratégias personalizadas para cada etapa da sua jornada financeira.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-coffee-brown text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-deep-navy mb-3">Análise Financeira</h3>
+                    <p class="text-gray-700 mb-4">
+                        Um diagnóstico completo da sua situação atual, identificando oportunidades e pontos de melhoria.
+                    </p>
+                    <a href="https://wa.link/lbnvvf
+                    " class="text-coffee-brown font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-coffee-brown text-4xl mb-4">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-deep-navy mb-3">Planejamento</h3>
+                    <p class="text-gray-700 mb-4">
+                        Estratégias personalizadas para organizar suas finanças e alcançar seus objetivos com clareza.
+                    </p>
+                    <a href="https://wa.link/lbnvvf
+                    " class="text-coffee-brown font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all fade-in" style="animation-delay: 0.6s;">
+                    <div class="text-coffee-brown text-4xl mb-4">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-deep-navy mb-3">Investimentos</h3>
+                    <p class="text-gray-700 mb-4">
+                        Orientação para fazer seu dinheiro trabalhar para você, de acordo com seu perfil e metas.
+                    </p>
+                    <a href="https://wa.link/lbnvvf
+                    " class="text-coffee-brown font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-deep-navy text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold mb-4">O que meus clientes dizem</h2>
+                <div class="h-1 w-20 bg-sand mx-auto mb-6"></div>
+                <p class="text-lg max-w-2xl mx-auto opacity-90">
+                    Históricos reais de transformação financeira
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm fade-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-sand text-2xl mr-3">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="italic">
+                            "João transformou minha relação com o dinheiro. Hoje tenho clareza e controle sobre minhas finanças."
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-sand mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana L.</h4>
+                            <p class="text-sm opacity-80">Empreendedora</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm fade-in" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-sand text-2xl mr-3">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="italic">
+                            "Finalmente entendi como investir de forma segura. Em 1 ano meu patrimônio cresceu 30%."
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-sand mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos R.</h4>
+                            <p class="text-sm opacity-80">Profissional Liberal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm fade-in" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-sand text-2xl mr-3">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="italic">
+                            "Saí das dívidas e hoje tenho uma reserva de emergência. A paz que isso traz não tem preço."
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-sand mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mariana S.</h4>
+                            <p class="text-sm opacity-80">Médica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold text-deep-navy mb-4">Insights Financeiros</h2>
+                <div class="h-1 w-20 bg-coffee-brown mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Artigos rápidos para você começar a transformar sua relação com o dinheiro
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md fade-in" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Artigo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-deep-navy mb-3">3 erros financeiros que te impedem de crescer</h3>
+                        <p class="text-gray-700 mb-4">
+                            Descubra os equívocos mais comuns que mantêm as pessoas estagnadas financeiramente.
+                        </p>
+                        <a href="#" class="text-coffee-brown font-medium inline-flex items-center">
+                            Ler artigo <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md fade-in" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Artigo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-deep-navy mb-3">Como criar um orçamento que realmente funciona</h3>
+                        <p class="text-gray-700 mb-4">
+                            Aprenda a metodologia simples que vai fazer seu planejamento financeiro sair do papel.
+                        </p>
+                        <a href="#" class="text-coffee-brown font-medium inline-flex items-center">
+                            Ler artigo <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md fade-in" style="animation-delay: 0.6s;">
+                    <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Artigo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-deep-navy mb-3">Primeiros passos nos investimentos: guia para iniciantes</h3>
+                        <p class="text-gray-700 mb-4">
+                            Tudo que você precisa saber para começar a investir com segurança e confiança.
+                        </p>
+                        <a href="#" class="text-coffee-brown font-medium inline-flex items-center">
+                            Ler artigo <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in" style="animation-delay: 0.8s;">
+                <a href="#" class="btn-secondary px-6 py-3 rounded-full font-medium inline-block">
+                    Ver todos os artigos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-coffee-brown text-white p-12">
+                        <h2 class="text-3xl font-bold mb-6">Vamos conversar?</h2>
+                        <p class="mb-6">
+                            Agende uma consulta inicial gratuita para discutirmos suas necessidades e como posso ajudar.
+                        </p>
+                        <div class="mb-6">
+                            <h3 class="font-bold mb-2">Informações de Contato</h3>
+                            <p class="flex items-center mb-2">
+                                <i class="fas fa-envelope mr-3"></i>   contato.joaovitorfinance@gmail.com
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-phone-alt mr-3"></i> (43) 99661-9847
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-3">Redes Sociais</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-de-souza-91a945346/" class="text-white hover:text-sand transition-colors">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a href="https://www.instagram.com/joaosh0/" class="text-white hover:text-sand transition-colors">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=61560832602327" class="text-white hover:text-sand transition-colors">
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-12">
+                        <h3 class="text-2xl font-bold text-deep-navy mb-6">Envie uma mensagem</h3>
+                        <form action="https://formspree.io/f/mvgazbqd" method="POST">
+                            <div class="mb-4">
+                              <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                              <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-brown focus:border-transparent"
+                              >
+                            </div>
+                            <div class="mb-4">
+                              <label for="email" class="block text-gray-700 mb-2">Email</label>
+                              <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-brown focus:border-transparent"
+                              >
+                            </div>
+                            <div class="mb-4">
+                              <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                              <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-brown focus:border-transparent"
+                              ></textarea>
+                            </div>
+                            <button
+                              type="submit"
+                              class="btn-primary w-full py-3 rounded-lg font-medium"
+                            >
+                              Enviar Mensagem
+                            </button>
+                          </form>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-navy text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">João Vitor</h2>
+                    <p class="text-sand italic">"Liberdade não se herda. Se constrói."</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="font-bold mb-3">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-sand transition-colors">Início</a></li>
+                        <li><a href="#about" class="hover:text-sand transition-colors">Sobre</a></li>
+                        <li><a href="#solutions" class="hover:text-sand transition-colors">Soluções</a></li>
+                        <li><a href="#contact" class="hover:text-sand transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="font-bold mb-3">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-sand transition-colors">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-sand transition-colors">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-sand transition-colors">Aviso Legal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-3">Conecte-se</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-sand transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-sand transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-sand transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://wa.link/lbnvvf
+                        " class="text-white hover:text-sand transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 João Vitor Estratégia Financeira. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Check for dark mode preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-mode');
+        }
+        
+        // Listen for changes in color scheme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>
